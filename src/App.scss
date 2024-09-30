@@ -1,0 +1,187 @@
+$primary-color: #3f30cf;
+$secondary-color: #e4e4e4;
+$title-color: #1a0855;
+$darker-secondary-color: #f3f6f9;
+$hr-color: rgb(180, 180, 180);
+$btn-bg: #3071cf;
+
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+}
+@mixin flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+// If text classes are added to a text override
+.primary-text {
+    color: $primary-color !important;
+}
+.secondary-text {
+    color: $secondary-color !important;
+}
+
+h2 {
+    color: $title-color;
+}
+
+.main-container {
+    @include flex-col;
+}
+
+// Navbar
+.navbar-container {
+    display: flex;
+    background-color: $secondary-color;
+    height: 4rem;
+    align-items: center;
+
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+
+    .navbar-logo {
+        text-align: left;
+        margin-left: 1rem;
+    }
+}
+
+.header-container {
+    display: flex;
+    height: 15vh;
+    top: 0;
+    background-color: $primary-color;
+    align-items: center;
+    box-shadow: 0 2px 4px 0 rgba(74, 73, 73, 0.2);
+}
+
+.restaurant-info-container {
+    @include flex-col;
+    margin-left: 1rem;
+    gap: 1px;
+}
+.restaurant-infos {
+    display: flex;
+    gap: 2rem;
+}
+
+.shopping-cart-div {
+    @include flex-col;
+    width: 90%;
+    background-color: $darker-secondary-color;
+    position: -webkit-sticky;
+
+    position: sticky;
+    top: 0;
+    padding-top: 1rem;
+    padding-left: 0.75rem;
+    box-shadow: -2px 0px 2px 1px #aaaaaa4c;
+
+    hr {
+        background-color: $hr-color;
+        height: 0.5px;
+        width: 100%;
+        border-color: $hr-color transparent;
+    }
+}
+
+.menu-div {
+    @include flex-col;
+    margin-left: 0.75rem;
+    gap: 0.5rem;
+}
+
+.menu-cart-div {
+    @include flex-row;
+    gap: 1rem;
+    height: auto;
+}
+.category-div {
+    @include flex-col;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.dish-card {
+    @include flex-row;
+    width: 70vw;
+    height: fit-content;
+    margin-left: 0.5rem;
+    padding-left: 0.5rem;
+    border: 2px solid rgb(162, 162, 162);
+    border-radius: 8px;
+    justify-content: space-between;
+
+    &:hover {
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        transform: translate3D(0, -1px, 0) scale(1.0075);
+        transition: 0.2s;
+    }
+}
+
+.dish-card-infos {
+    @include flex-col;
+}
+
+.add-dish-btn {
+    background-color: $btn-bg;
+    color: $secondary-color;
+    align-self: center;
+    margin-right: 0.5rem;
+    height: 4rem;
+
+    &:hover {
+        filter: brightness(80%);
+        transition: 0.2s;
+    }
+}
+
+.cart-item {
+    display: flex;
+    gap: 0.1rem;
+    justify-content: space-between;
+    margin-left: 0.5rem;
+    margin-right: 0.25rem;
+    button {
+        align-self: end;
+    }
+    padding: 0.4rem;
+    border-radius: 8px;
+    &:hover {
+        background-color: $secondary-color;
+        filter: brightness(95%);
+        // transition: 0.1s;
+    }
+}
+.cart-item-infos {
+    @include flex-col;
+    gap: 0.1rem;
+}
+
+.total-price-div {
+    margin-left: 0.5rem;
+}
+
+p,
+h2 {
+    margin: 0px;
+    padding: 0px;
+}
+
+.footer-div {
+    height: 5vh;
+    padding-top: 2rem;
+    background-color: $primary-color;
+    filter: brightness(50%);
+}
+
+.remove-dish-btn {
+    background-color: $btn-bg;
+    color: $secondary-color;
+    &:hover {
+        filter: brightness(80%);
+    }
+}
+
+.emptycart-msg {
+    text-align: center;
+}
